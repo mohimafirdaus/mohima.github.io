@@ -1,15 +1,29 @@
 ---
 layout: default
 title: Mohima's Blog
----
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Result</title>
-	</head>
-	<body><h1>YEAH SANDWICHES</h1>
-	<img src="http://bit.ly/RhrMEn" />
-		<p>I like eggs.</p>
-		<p>But mostly sandwiches.</p>
-	</body>
+<head>
+  <meta charset=utf-8 />
+  <title></title>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet' />
+  <style>
+    body { margin:0; padding:0; }
+    .map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+<div id='map-two' class='map'> </div>
+<script>
+L.mapbox.accessToken = '<your access token here>';
+L.mapbox.map('map-two', 'mapbox.dc-markers', {
+    // the options here prevent mouse wheel or trackpad scrolling
+    // and restrict the zooms to zoom levels 14 through 18
+    scrollWheelZoom: false,
+    maxZoom: 14,
+    minZoom: 10
+}).setView([38.8906,-77.01313], 12);
+</script>
+</body>
 </html>
